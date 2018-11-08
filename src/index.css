@@ -6,9 +6,69 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  align-content: center;
+  text-align: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+fieldset {
+  display: block;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-before: 0em;
+  -webkit-padding-start: 0em;
+  -webkit-padding-end: 0em;
+  -webkit-padding-after: 0em;
+  border: 0px;
+  border-image-source: initial;
+  border-image-slice: initial;
+  border-image-width: initial;
+  border-image-outset: initial;
+  border-image-repeat: initial;
+  min-width: -webkit-min-content;
+  padding: 30px;
+}
+input {
+  text-align: center;
+  font-weight:300;
+  font-size: 2rem;
+  border:0px;
+  outline: none;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #4b545f;
+  background: #fff;
+  padding: 10px 15px;
+  margin: 30px 0px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  border-bottom:1px solid #ddd;
+}
+
+select {
+  text-align: center;
+  border:0px;
+  outline: none;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #4b545f;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  margin: 0px 0px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  border-bottom:1px solid #ddd;
+}
+
+.result{
+  text-transform: capitalize;
+  font-size: 2rem;
 }
