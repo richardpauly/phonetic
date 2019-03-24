@@ -31,6 +31,7 @@ class App extends Component {
           <select value={this.state.method} onChange={this.handleMethodChange}>
               <option value="nato">English (NATO)</option>
               <option value="swedish">Swedish Armed Forces</option>
+              <option value="adamBerit">Swedish Equality Enhanced (AdamBerit)</option>
             </select>
         </form>
         <Result text={this.state.input} method={this.state.method} />

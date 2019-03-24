@@ -59,6 +59,37 @@ const swedish = {
   ä: 'ärlig',
   ö: 'östen'
 };
+
+const adamBerit = {
+  a: 'adam',
+  b: 'berit',
+  c: 'cesar',
+  d: 'doris',
+  e: 'emir',
+  f: 'fanny',
+  g: 'gustav',
+  h: 'hedvig',
+  i: 'ivar',
+  j: 'jenny',
+  k: 'khaled',
+  l: 'laila',
+  m: 'matti',
+  n: 'nora',
+  o: 'olof',
+  p: 'pippi',
+  q: 'qvintus',
+  r: 'robin',
+  s: 'sigurd',
+  t: 'tyra',
+  u: 'ulrik',
+  v: 'vicky',
+  x: 'xena',
+  y: 'yngve',
+  z: 'zelda',
+  å: 'åke',
+  ä: 'ängel',
+  ö: 'östen'
+};
 class Result extends Component {
   translate(text, method) {
     if (!text)
@@ -67,6 +98,11 @@ class Result extends Component {
     if (method === 'swedish') {
       text.split('').forEach(character => {
         result.push(this.translateCharToSwedish(character));
+      });
+    }
+    else if (method === 'adamBerit') {
+      text.split('').forEach(character => {
+        result.push(this.translateCharToAdamBerit(character));
       });
     } else {
       text.split('').forEach(character => {
@@ -124,14 +160,20 @@ class Result extends Component {
       case '}': return 'right brace';
       case '~': return 'tilde';
       case '`': return 'grave accent';
+      case '¤': return 'currency sign';
+      case '§': return 'section sign';
       default: return character;
     }
   }
 
-  translateCharToSwedish(character) {
+  translateCharToAdamBerit(character) {
     if (/^[a-zA-ZåäöÅÄÖ]$/.test(character)) {
-      return swedish[character.toLowerCase()];
+      return adamBerit[character.toLowerCase()];
     }
+    return this.translateSpecialCharacterToSwedish(character);
+  }
+
+  translateSpecialCharacterToSwedish(character) {
     switch (character) {
       case '1': return 'ett';
       case '2': return 'tvåa';
@@ -176,11 +218,18 @@ class Result extends Component {
       case '}': return 'höger måsvinge';
       case '~': return 'tilde';
       case '`': return 'grav accent';
+      case '¤': return 'sol';
+      case '§': return 'paragraf';
       default: return character;
     }
   }
 
-
+  translateCharToSwedish(character) {
+    if (/^[a-zA-ZåäöÅÄÖ]$/.test(character)) {
+      return swedish[character.toLowerCase()];
+    }
+    return this.translateSpecialCharacterToSwedish(character);
+  }
 
   render() {
     return (
